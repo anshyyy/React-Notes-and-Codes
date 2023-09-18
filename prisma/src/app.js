@@ -11,12 +11,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 //cookie middleware
 app.use(cookieParser());
 
-
-
-const setUpAndStartServer = ()=> {
+const setUpAndStartServer = async ()=> {
 
     app.use(ApiRoutes);
-        
     app.listen(PORT,()=>{
           console.log(`server started on ${PORT}`);
     });

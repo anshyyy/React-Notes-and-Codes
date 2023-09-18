@@ -1,10 +1,10 @@
 const express = require('express');
-
+const {signup} = require('../controllers/userController')
 const router = express.Router();
 
 router.get("/",(req,res)=> {
     try {
-        res.status(200).json({
+        return res.status(200).json({
             data : "Hi from other side",
             success : true
         })
@@ -14,7 +14,5 @@ router.get("/",(req,res)=> {
     }
 });
 
-
-
-
+router.post('/signup',signup);
 module.exports = router;

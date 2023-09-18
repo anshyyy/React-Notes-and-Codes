@@ -1,4 +1,4 @@
-const getJwtToken = require('./getJwtToken');
+const getJwtToken = require('./getJsonToken');
 
 
 const cookieToken = (user,res)=>{
