@@ -1,6 +1,6 @@
 const express = require('express');
-const {signup,deleteUser,updateUser,getUser} = require('../controllers/userController')
-const {create} = require('../controllers/postController');
+const {signup,deleteUser,getUserWithPosts,updateUser,getUser} = require('../controllers/userController')
+const {create,getAllPosts} = require('../controllers/postController');
 const router = express.Router();
 
 router.get("/",(req,res)=> {
@@ -19,7 +19,9 @@ router.delete('/delete',deleteUser);
 router.post('/signup',signup);
 router.patch('/update',updateUser);
 router.get("/getuser",getUser);
+router.get("/getUserWithPosts",getUserWithPosts);
 
 
 router.post("/createPost",create);
+router.get("/getAllPosts",getAllPosts);
 module.exports = router;

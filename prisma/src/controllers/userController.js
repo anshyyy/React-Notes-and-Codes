@@ -103,6 +103,31 @@ const getUser = async(req,res)=> {
         });
     }
 }
+const getUserWithPosts = async(req,res)=> {
+    try {
+        const id = req.query.id;
+        const user = await prisma.user.findUnique({
+            where : {
+                id : id
+            },
+            include: {
+                posts: true, 
+            },
+        });
+        return res.status(200).json({
+            success : true,
+            data : user,
+            message : "fetched the user"
+          });
+
+    } catch (error) {
+        console.log(error);
+        return res.status(501).json({
+            message:"not able to fetch the user",
+            success : false,
+        });
+    }
+}
 
 
 
@@ -110,6 +135,7 @@ module.exports = {
     signup,
    // login,
     deleteUser,
+    getUserWithPosts,
     updateUser,
     getUser,
 }
