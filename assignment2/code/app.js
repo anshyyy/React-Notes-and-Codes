@@ -1,6 +1,6 @@
 /*
 Parcel : 
-- Hot Module Reloading
+- Hot Module Repacement
 - File Watcher algorithm C++
 - Bundling
 - Cleaning our code
@@ -13,6 +13,8 @@ Parcel :
 - port Number
 - Consistent Hashing Algorithms
 - Zero Config Bundler 
+- Transitive Dependecies
+- 
 
 */
 

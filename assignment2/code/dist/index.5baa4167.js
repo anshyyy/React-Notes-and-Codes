@@ -2953,7 +2953,7 @@ $parcel$ReactRefreshHelpers$6024.prelude(module);
 try {
 /*
 Parcel : 
-- Hot Module Reloading
+- Hot Module Repacement
 - File Watcher algorithm C++
 - Bundling
 - Cleaning our code
@@ -2966,6 +2966,8 @@ Parcel :
 - port Number
 - Consistent Hashing Algorithms
 - Zero Config Bundler 
+- Transitive Dependecies
+- 
 
 */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _react = require("react");
