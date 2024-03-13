@@ -4,7 +4,18 @@
 // const container = document.getElementById("container");
 // container.appendChild(world);
 
-const heading = React.createElement("h3",{},"Hello world from React");
-console.log(heading);
+const h1 = React.createElement("h1",{
+    id:"id1"
+},"Hello world from React");
+
+const h2 = React.createElement("h2",{
+    id:"id2"
+},"Hello from React");
+
+const div = React.createElement("div",{
+    id:"container"
+},[h1,h2])
+
+//console.log(heading);
 const root = ReactDOM.createRoot(document.getElementById("container"));
-root.render(heading)
+root.render(div)  
