@@ -81,7 +81,7 @@ app.get("/",async(req,res)=>{
 app.delete("/:id",async(req,res)=>{
     try {
         const id = req.params.id;
-        const parsedPayload = updatedTodo.safeParse(id);
+        const parsedPayload = updatedTodo.safeParse(req.params);
         if(!parsedPayload.success){
             return res.status(401).json({
               msg :"you sent the wrong inputs!!",
@@ -104,14 +104,16 @@ app.delete("/:id",async(req,res)=>{
 app.patch("/:id",async(req,res)=>{
     try {
         const id = req.params.id;
-        const parsedPayload = updatedTodo.safeParse(id);
+        console.log(id);
+        const parsedPayload = updatedTodo.safeParse(req.params);
+       // console.log(parsedPayload);
         if(!parsedPayload.success){
             return res.status(401).json({
               msg :"you sent the wrong inputs!!",
               success : false  
           })
          }
-        const todo = await Todo.update({
+        const todo = await Todo.updateOne({
             _id:id
         },
        {
@@ -128,7 +130,7 @@ app.patch("/:id",async(req,res)=>{
         return res.status(500).json({
             message : "Request Failed",
             success : false,
-            err:error
+            err:error.message
           });
     }
 });
