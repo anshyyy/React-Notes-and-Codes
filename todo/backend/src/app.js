@@ -1,6 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require("cors")
 const {createTodo,updatedTodo} = require("../types")
 
 const mongoose = require("mongoose");
@@ -20,6 +21,7 @@ const todoSchema = mongoose.Schema({
 
 const Todo = mongoose.model("todo",todoSchema);
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 
 // app.get("/check",(req,res)=>{
